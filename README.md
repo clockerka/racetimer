@@ -7,7 +7,7 @@
 <p align="center">
 <h4 align="center">simple racetimer for competiting your friends</h4>
 <p align="center">
-  <a href="https://www.donationalerts.com/r/clockerka">
+  <a href="https://www.donationalerts.com/r/clockerka">DONATE ME SO I COULD PLACE THIS APP IN APPSTORE<a/>
 
 ---
 
