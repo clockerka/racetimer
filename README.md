@@ -14,5 +14,5 @@
 - claude code
 - google
 - stackoverflow
-- (Nikolai Masson)[https://github.com/Niksson] for a great web-racetimer, which i have used (p.s. this racetimer is inspired by his (one)[https://github.com/Niksson/racetimer-web])
+- [Nikolai Masson](https://github.com/Niksson) for a great web-racetimer, which i have used (p.s. this racetimer is inspired by his (one)[https://github.com/Niksson/racetimer-web])
 - Maxim Ilin for a original RaceTimer
