@@ -7,7 +7,11 @@ struct SolvesView: View {
         GeometryReader { geometry in
             ZStack {
                 VStack(spacing: 0) {
+<<<<<<< HEAD
                     VStack {
+=======
+                    VStack(spacing: 0) {
+>>>>>>> e424f6e (fixed scrambles)
                         Text(LocalizedString.solves.localized)
                             .font(.headline)
                             .padding(.vertical, 10)
@@ -41,13 +45,21 @@ struct SolvesView: View {
                             }
                         }
                     }
+<<<<<<< HEAD
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+=======
+                    .frame(height: geometry.size.height / 2)
+>>>>>>> e424f6e (fixed scrambles)
                     .background(Color(UIColor.systemBackground))
                     .rotationEffect(.degrees(180))
                     Divider()
                         .frame(height: 2)
                         .background(Color.gray)
+<<<<<<< HEAD
                     VStack {
+=======
+                    VStack(spacing: 0) {
+>>>>>>> e424f6e (fixed scrambles)
                         Text(LocalizedString.solves.localized)
                             .font(.headline)
                             .padding(.vertical, 10)
@@ -81,7 +93,11 @@ struct SolvesView: View {
                             }
                         }
                     }
+<<<<<<< HEAD
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+=======
+                    .frame(height: geometry.size.height / 2)
+>>>>>>> e424f6e (fixed scrambles)
                     .background(Color(UIColor.systemBackground))
                 }
                 if showCloseButton {

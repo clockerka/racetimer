@@ -26,9 +26,22 @@ struct SessionsListView: View {
                                         .foregroundColor(.green)
                                 }
                             }
+<<<<<<< HEAD
                             Text("\(session.completedRounds.count) \(LocalizedString.rounds.localized)")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
+=======
+                            Text("\(LocalizedString.rounds.localized) \(session.completedRounds.count)")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            if session.name != nil || session.playerNames.player1 != nil || session.playerNames.player2 != nil {
+                                let e1 = session.selectedEvents.player1.name
+                                let e2 = session.selectedEvents.player2.name
+                                Text("\(e1) vs \(e2)")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+>>>>>>> e424f6e (fixed scrambles)
                             Text(formatDate(session.createdDate))
                                 .font(.caption)
                                 .foregroundColor(.secondary)
@@ -63,9 +76,27 @@ struct SessionsListView: View {
         sessions = raceContext.getAllSessions()
     }
     private func sessionDisplayName(_ session: Session) -> String {
+<<<<<<< HEAD
         let p1 = session.playerNames.player1 ?? "P1"
         let p2 = session.playerNames.player2 ?? "P2"
         return "\(p1) vs \(p2)"
+=======
+        let p1 = session.playerNames.player1
+        let p2 = session.playerNames.player2
+        if let p1 = p1, let p2 = p2 {
+            return "\(p1) vs \(p2)"
+        } else if let p1 = p1 {
+            let e2 = session.selectedEvents.player2.name
+            return "\(p1) vs \(e2)"
+        } else if let p2 = p2 {
+            let e1 = session.selectedEvents.player1.name
+            return "\(e1) vs \(p2)"
+        } else {
+            let e1 = session.selectedEvents.player1.name
+            let e2 = session.selectedEvents.player2.name
+            return "\(e1) vs \(e2)"
+        }
+>>>>>>> e424f6e (fixed scrambles)
     }
     private func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
