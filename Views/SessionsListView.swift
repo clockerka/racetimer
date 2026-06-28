@@ -26,11 +26,6 @@ struct SessionsListView: View {
                                         .foregroundColor(.green)
                                 }
                             }
-<<<<<<< HEAD
-                            Text("\(session.completedRounds.count) \(LocalizedString.rounds.localized)")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-=======
                             Text("\(LocalizedString.rounds.localized) \(session.completedRounds.count)")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
@@ -41,7 +36,6 @@ struct SessionsListView: View {
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                             }
->>>>>>> e424f6e (fixed scrambles)
                             Text(formatDate(session.createdDate))
                                 .font(.caption)
                                 .foregroundColor(.secondary)
@@ -76,11 +70,6 @@ struct SessionsListView: View {
         sessions = raceContext.getAllSessions()
     }
     private func sessionDisplayName(_ session: Session) -> String {
-<<<<<<< HEAD
-        let p1 = session.playerNames.player1 ?? "P1"
-        let p2 = session.playerNames.player2 ?? "P2"
-        return "\(p1) vs \(p2)"
-=======
         let p1 = session.playerNames.player1
         let p2 = session.playerNames.player2
         if let p1 = p1, let p2 = p2 {
@@ -96,7 +85,6 @@ struct SessionsListView: View {
             let e2 = session.selectedEvents.player2.name
             return "\(e1) vs \(e2)"
         }
->>>>>>> e424f6e (fixed scrambles)
     }
     private func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()

@@ -18,8 +18,6 @@ class ScrambleGenerator {
         }
         return scramble.joined(separator: " ")
     }
-<<<<<<< HEAD
-=======
     private static func generate333bfScramble() -> String {
         var scramble = generate333Scramble()
         let wideBases = ["R", "L", "U", "D", "F", "B"]
@@ -32,7 +30,6 @@ class ScrambleGenerator {
         }
         return scramble
     }
->>>>>>> e424f6e (fixed scrambles)
     static func generate222Scramble() -> String {
         let moves = ["R", "U", "F"]
         let modifiers = ["", "'", "2"]
@@ -107,15 +104,10 @@ class ScrambleGenerator {
         switch eventId {
         case "222":
             return generate222Scramble()
-<<<<<<< HEAD
-        case "333", "333oh", "333bf":
-            return generate333Scramble()
-=======
         case "333", "333oh":
             return generate333Scramble()
         case "333bf":
             return generate333bfScramble()
->>>>>>> e424f6e (fixed scrambles)
         case "444":
             return generate444Scramble()
         case "555":
@@ -174,14 +166,6 @@ class ScrambleGenerator {
         return scramble.joined(separator: " ")
     }
     private static func generateMinxScramble() -> String {
-<<<<<<< HEAD
-        let moves = ["R++", "R--", "D++", "D--", "U"]
-        var scramble: [String] = []
-        for _ in 0..<77 {
-            scramble.append(moves.randomElement()!)
-        }
-        return scramble.joined(separator: " ")
-=======
         var lines: [String] = []
         let rMoves = ["R++", "R--"]
         let dMoves = ["D++", "D--"]
@@ -196,30 +180,17 @@ class ScrambleGenerator {
             lines.append(line.joined(separator: " "))
         }
         return lines.joined(separator: "\n")
->>>>>>> e424f6e (fixed scrambles)
     }
     private static func generateSq1Scramble() -> String {
         var scramble: [String] = []
         for _ in 0..<12 {
             let top = Int.random(in: -5...6)
             let bottom = Int.random(in: -5...6)
-<<<<<<< HEAD
-            scramble.append("(\(top),\(bottom))")
-            if Bool.random() {
-                scramble.append("/")
-            }
-=======
             scramble.append("(\(top),\(bottom))/")
->>>>>>> e424f6e (fixed scrambles)
         }
         return scramble.joined(separator: " ")
     }
     private static func generateClockScramble() -> String {
-<<<<<<< HEAD
-        let pins = ["UR", "DR", "DL", "UL", "U", "R", "D", "L", "ALL"]
-        var scramble: [String] = []
-        for pin in pins {
-=======
         let firstPins = ["UR", "DR", "DL", "UL", "U", "R", "D", "L", "ALL"]
         var scramble: [String] = []
         for pin in firstPins {
@@ -230,7 +201,6 @@ class ScrambleGenerator {
         scramble.append("y2")
         let secondPins = ["U", "R", "L", "D", "ALL"]
         for pin in secondPins {
->>>>>>> e424f6e (fixed scrambles)
             let turns = Int.random(in: 0...6)
             let direction = Bool.random() ? "+" : "-"
             scramble.append("\(pin)\(turns)\(direction)")
