@@ -13,6 +13,7 @@
 
 ### Thanks:
 - claude code
+- antigravity
 - google
 - stackoverflow
 - [Nikolai Masson](https://github.com/Niksson) for a great web-racetimer, which i have used (p.s. this racetimer is inspired by his [one](https://github.com/Niksson/racetimer-web))
