@@ -1,220 +1,44 @@
 import Foundation
 class ScrambleGenerator {
-    static func generate333Scramble() -> String {
-        let moves = ["R", "L", "U", "D", "F", "B"]
-        let modifiers = ["", "'", "2"]
-        var scramble: [String] = []
-        var lastMove = ""
-        var beforeLastMove = ""
-        for _ in 0..<20 {
-            var move: String
-            repeat {
-                move = moves.randomElement()!
-            } while move == lastMove || (move == beforeLastMove && areSameFace(move, lastMove))
-            let modifier = modifiers.randomElement()!
-            scramble.append(move + modifier)
-            beforeLastMove = lastMove
-            lastMove = move
+    static func getPuzzleIndex(for eventId: String) -> Int32 {
+        switch eventId {
+        case "222": return 0
+        case "333": return 1
+        case "444": return 2
+        case "555": return 3
+        case "666": return 4
+        case "777": return 5
+        case "sq1": return 6
+        case "minx": return 7
+        case "pyram": return 8
+        case "clock": return 9
+        case "skewb": return 10
+        case "333oh": return 11
+        case "333bf": return 12
+        default: return 1
         }
-        return scramble.joined(separator: " ")
-    }
-    private static func generate333bfScramble() -> String {
-        var scramble = generate333Scramble()
-        let wideBases = ["R", "L", "U", "D", "F", "B"]
-        let modifiers = ["", "'", "2"]
-        let num = Int.random(in: 1...2)
-        for _ in 0..<num {
-            let base = wideBases.randomElement()!
-            let mod = modifiers.randomElement()!
-            scramble += " \(base)w\(mod)"
-        }
-        return scramble
-    }
-    static func generate222Scramble() -> String {
-        let moves = ["R", "U", "F"]
-        let modifiers = ["", "'", "2"]
-        var scramble: [String] = []
-        var lastMove = ""
-        for _ in 0..<9 {
-            var move: String
-            repeat {
-                move = moves.randomElement()!
-            } while move == lastMove
-            let modifier = modifiers.randomElement()!
-            scramble.append(move + modifier)
-            lastMove = move
-        }
-        return scramble.joined(separator: " ")
-    }
-    static func generate444Scramble() -> String {
-        let moves = ["R", "L", "U", "D", "F", "B", "Rw", "Lw", "Uw", "Dw", "Fw", "Bw"]
-        let modifiers = ["", "'", "2"]
-        var scramble: [String] = []
-        var lastMove = ""
-        var beforeLastMove = ""
-        for _ in 0..<40 {
-            var move: String
-            repeat {
-                move = moves.randomElement()!
-            } while move == lastMove || (move == beforeLastMove && areSameFace(move, lastMove))
-            let modifier = modifiers.randomElement()!
-            scramble.append(move + modifier)
-            beforeLastMove = lastMove
-            lastMove = move
-        }
-        return scramble.joined(separator: " ")
-    }
-    static func generatePyramScramble() -> String {
-        let moves = ["U", "L", "R", "B"]
-        let modifiers = ["", "'"]
-        let tips = ["u", "l", "r", "b"]
-        var scramble: [String] = []
-        var lastMove = ""
-        for _ in 0..<11 {
-            var move: String
-            repeat {
-                move = moves.randomElement()!
-            } while move == lastMove
-            let modifier = modifiers.randomElement()!
-            scramble.append(move + modifier)
-            lastMove = move
-        }
-        for tip in tips.shuffled().prefix(Int.random(in: 2...4)) {
-            scramble.append(tip + (modifiers.randomElement()!))
-        }
-        return scramble.joined(separator: " ")
-    }
-    static func generateSkewbScramble() -> String {
-        let moves = ["R", "L", "U", "B"]
-        let modifiers = ["", "'"]
-        var scramble: [String] = []
-        var lastMove = ""
-        for _ in 0..<11 {
-            var move: String
-            repeat {
-                move = moves.randomElement()!
-            } while move == lastMove
-            let modifier = modifiers.randomElement()!
-            scramble.append(move + modifier)
-            lastMove = move
-        }
-        return scramble.joined(separator: " ")
     }
     static func generateScramble(for eventId: String) -> String {
-        switch eventId {
-        case "222":
-            return generate222Scramble()
-        case "333", "333oh":
-            return generate333Scramble()
-        case "333bf":
-            return generate333bfScramble()
-        case "444":
-            return generate444Scramble()
-        case "555":
-            return generate555Scramble()
-        case "666":
-            return generate666Scramble()
-        case "777":
-            return generate777Scramble()
-        case "pyram":
-            return generatePyramScramble()
-        case "skewb":
-            return generateSkewbScramble()
-        case "minx":
-            return generateMinxScramble()
-        case "sq1":
-            return generateSq1Scramble()
-        case "clock":
-            return generateClockScramble()
-        default:
-            return generate333Scramble()
-        }
+        let puzzle = getPuzzleIndex(for: eventId)
+        var isolate: OpaquePointer? = nil
+        var thread: OpaquePointer? = nil
+        graal_create_isolate(nil, &isolate, &thread)
+        let s = String(cString: tnoodle_lib_scramble(thread, puzzle))
+        graal_tear_down_isolate(thread)
+        return s
     }
-    private static func generate555Scramble() -> String {
-        let moves = ["R", "L", "U", "D", "F", "B", "Rw", "Lw", "Uw", "Dw", "Fw", "Bw"]
-        let modifiers = ["", "'", "2"]
-        var scramble: [String] = []
-        var lastMove = ""
-        for _ in 0..<60 {
-            var move: String
-            repeat {
-                move = moves.randomElement()!
-            } while move == lastMove
-            scramble.append(move + (modifiers.randomElement()!))
-            lastMove = move
-        }
-        return scramble.joined(separator: " ")
-    }
-    private static func generate666Scramble() -> String {
-        let moves = ["R", "L", "U", "D", "F", "B", "3Rw", "3Lw", "3Uw", "3Dw", "3Fw", "3Bw"]
-        let modifiers = ["", "'", "2"]
-        var scramble: [String] = []
-        for _ in 0..<80 {
-            let move = moves.randomElement()!
-            scramble.append(move + (modifiers.randomElement()!))
-        }
-        return scramble.joined(separator: " ")
-    }
-    private static func generate777Scramble() -> String {
-        let moves = ["R", "L", "U", "D", "F", "B", "3Rw", "3Lw", "3Uw", "3Dw", "3Fw", "3Bw"]
-        let modifiers = ["", "'", "2"]
-        var scramble: [String] = []
-        for _ in 0..<100 {
-            let move = moves.randomElement()!
-            scramble.append(move + (modifiers.randomElement()!))
-        }
-        return scramble.joined(separator: " ")
-    }
-    private static func generateMinxScramble() -> String {
-        var lines: [String] = []
-        let rMoves = ["R++", "R--"]
-        let dMoves = ["D++", "D--"]
-        let uMoves = ["U", "U'"]
-        for _ in 0..<6 {
-            var line: [String] = []
-            for _ in 0..<5 {
-                line.append(rMoves.randomElement()!)
-                line.append(dMoves.randomElement()!)
-            }
-            line.append(uMoves.randomElement()!)
-            lines.append(line.joined(separator: " "))
-        }
-        return lines.joined(separator: "\n")
-    }
-    private static func generateSq1Scramble() -> String {
-        var scramble: [String] = []
-        for _ in 0..<12 {
-            let top = Int.random(in: -5...6)
-            let bottom = Int.random(in: -5...6)
-            scramble.append("(\(top),\(bottom))/")
-        }
-        return scramble.joined(separator: " ")
-    }
-    private static func generateClockScramble() -> String {
-        let firstPins = ["UR", "DR", "DL", "UL", "U", "R", "D", "L", "ALL"]
-        var scramble: [String] = []
-        for pin in firstPins {
-            let turns = Int.random(in: 0...6)
-            let direction = Bool.random() ? "+" : "-"
-            scramble.append("\(pin)\(turns)\(direction)")
-        }
-        scramble.append("y2")
-        let secondPins = ["U", "R", "L", "D", "ALL"]
-        for pin in secondPins {
-            let turns = Int.random(in: 0...6)
-            let direction = Bool.random() ? "+" : "-"
-            scramble.append("\(pin)\(turns)\(direction)")
-        }
-        return scramble.joined(separator: " ")
-    }
-    private static func areSameFace(_ move1: String, _ move2: String) -> Bool {
-        let oppositePairs = [("R", "L"), ("U", "D"), ("F", "B")]
-        for pair in oppositePairs {
-            if (move1.hasPrefix(pair.0) && move2.hasPrefix(pair.1)) ||
-               (move1.hasPrefix(pair.1) && move2.hasPrefix(pair.0)) {
-                return true
+    static func drawScramble(for eventId: String, scramble: String) -> String? {
+        let puzzle = getPuzzleIndex(for: eventId)
+        var isolate: OpaquePointer? = nil
+        var thread: OpaquePointer? = nil
+        graal_create_isolate(nil, &isolate, &thread)
+        var svgStr: String? = nil
+        scramble.withCString { s in
+            if let drawnSvg = tnoodle_lib_draw_scramble(thread, puzzle, s) {
+                svgStr = String(cString: drawnSvg)
             }
         }
-        return false
+        graal_tear_down_isolate(thread)
+        return svgStr
     }
 }

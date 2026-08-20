@@ -1,4 +1,5 @@
 import SwiftUI
+import SVGView
 struct ScrambleModalView: View {
     @EnvironmentObject var raceContext: RaceContext
     @Environment(\.dismiss) var dismiss
@@ -21,6 +22,12 @@ struct ScrambleModalView: View {
                                 .multilineTextAlignment(.center)
                                 .padding()
                                 .frame(maxWidth: .infinity)
+                            if let svgStr = raceContext.currentRound.scrambleSVG?.player2 {
+                                SVGView(string: svgStr)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxHeight: 180)
+                                    .padding()
+                            }
                         }
                     }
                 }
@@ -46,6 +53,12 @@ struct ScrambleModalView: View {
                                 .multilineTextAlignment(.center)
                                 .padding()
                                 .frame(maxWidth: .infinity)
+                            if let svgStr = raceContext.currentRound.scrambleSVG?.player1 {
+                                SVGView(string: svgStr)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxHeight: 180)
+                                    .padding()
+                            }
                         }
                     }
                     Button(LocalizedString.close.localized) {

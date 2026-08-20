@@ -2,11 +2,13 @@ import Foundation
 struct Round: Codable, Identifiable {
     let id: UUID
     var scramble: SideMap<String>
+    var scrambleSVG: SideMap<String?>?
     var solves: SideMap<Solve?>
     var winner: Side?
-    init(id: UUID = UUID(), scramble: SideMap<String> = SideMap(player1: "", player2: ""), solves: SideMap<Solve?> = SideMap(player1: nil, player2: nil), winner: Side? = nil) {
+    init(id: UUID = UUID(), scramble: SideMap<String> = SideMap(player1: "", player2: ""), scrambleSVG: SideMap<String?>? = nil, solves: SideMap<Solve?> = SideMap(player1: nil, player2: nil), winner: Side? = nil) {
         self.id = id
         self.scramble = scramble
+        self.scrambleSVG = scrambleSVG
         self.solves = solves
         self.winner = winner
     }

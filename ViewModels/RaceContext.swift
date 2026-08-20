@@ -74,17 +74,22 @@ class RaceContext: ObservableObject {
             let event2 = self.session.selectedEvents.player2
             if event1.eventId == event2.eventId {
                 let scramble = ScrambleGenerator.generateScramble(for: event1.eventId)
+                let svg = ScrambleGenerator.drawScramble(for: event1.eventId, scramble: scramble)
                 DispatchQueue.main.async {
                     self.currentRound.scramble.player1 = scramble
                     self.currentRound.scramble.player2 = scramble
+                    self.currentRound.scrambleSVG = SideMap(player1: svg, player2: svg)
                     self.scramblesGenerating = false
                 }
             } else {
                 let scramble1 = ScrambleGenerator.generateScramble(for: event1.eventId)
+                let svg1 = ScrambleGenerator.drawScramble(for: event1.eventId, scramble: scramble1)
                 let scramble2 = ScrambleGenerator.generateScramble(for: event2.eventId)
+                let svg2 = ScrambleGenerator.drawScramble(for: event2.eventId, scramble: scramble2)
                 DispatchQueue.main.async {
                     self.currentRound.scramble.player1 = scramble1
                     self.currentRound.scramble.player2 = scramble2
+                    self.currentRound.scrambleSVG = SideMap(player1: svg1, player2: svg2)
                     self.scramblesGenerating = false
                 }
             }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,8 +14,10 @@
 		3044688E4E1F8453751EF47D /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBC2BC30C8A86EE9A4F2E0C /* LanguageManager.swift */; };
 		3619079C4E576378901B2695 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4779337ABA3551A418859873 /* LocalizedString.swift */; };
 		3BACED1216F92AF03CC43271 /* ScrambleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65E052805E0313AC30B5D /* ScrambleGenerator.swift */; };
+		3E9A584AF7D24A7A71B8A562 /* TNoodleLibNative.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1F4E5C5E17AF212154BB0CB /* TNoodleLibNative.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		466C578514F92E3ED01F0C27 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D7DE930799007D5C2A4FE7 /* Session.swift */; };
 		4A3049B28BB409176C5B6389 /* racetimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7261D5D0CA14CD41471097 /* racetimerApp.swift */; };
+		59586AD380E109F13F73C0BB /* TNoodleLibNative.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1F4E5C5E17AF212154BB0CB /* TNoodleLibNative.xcframework */; };
 		651331678D1F6891291BEBA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68C780D078FC9D2E0E6249A4 /* Localizable.strings */; };
 		6A56C37A53A5D500F2393FC7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C42DB903CEC07E56EC952 /* MenuView.swift */; };
 		6D1C3FD7040A56B770403630 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E3089B6C2D4F4A6661BC2 /* Round.swift */; };
@@ -31,10 +33,26 @@
 		B564085CAA9779854CF6EAE6 /* TimerMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27FDCCE8F2D44BB38B7DB3 /* TimerMachine.swift */; };
 		BE8DA91444944CA7D0693DF8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60995EB545BEE1363E570160 /* PlayerView.swift */; };
 		C2F0A1DF05BA127CC9D1BAFE /* SolvesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DAC9A4790D0AD4C4D57071 /* SolvesView.swift */; };
+		C74A5AB7AB09F152BEC81FBB /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D83FBCAC9C0154CCB512212B /* logo.jpg */; };
 		CAAD61E6A0062C6E21E4BEF4 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66326306E2E33B546718E381 /* StatsView.swift */; };
+		D5E7EE0C9766E4670EF4CBDA /* SVGView in Frameworks */ = {isa = PBXBuildFile; productRef = E6CB93D986277F305807E96C /* SVGView */; };
 		E7C17BB9C2E082E91063EDF0 /* TimerArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49FB4E9056AA337A1A85FC4 /* TimerArea.swift */; };
 		FE0C26C1BF6829555FFC295C /* RaceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF1E9EAD029A6D1FD834 /* RaceContext.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		23DF1B8DB210C794A4B30792 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3E9A584AF7D24A7A71B8A562 /* TNoodleLibNative.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1179D6C55B4547652BEB633A /* EventPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPickerView.swift; sourceTree = "<group>"; };
@@ -58,19 +76,36 @@
 		73A294DD7B45A39C94B0A3F9 /* PenaltyModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenaltyModalView.swift; sourceTree = "<group>"; };
 		73D7DE930799007D5C2A4FE7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		745834EEEC5DA9C330A2245C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		76A397E62FC68F06E74A46EE /* LICENSE */ = {isa = PBXFileReference; path = LICENSE; sourceTree = "<group>"; };
 		7D1A8AE41037AE0DF3E7B79B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EBC2BC30C8A86EE9A4F2E0C /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		A3BE5CDACF62BAFD0F7F02BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB0EEC8EA392EF1AA70BB7F7 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B1F4E5C5E17AF212154BB0CB /* TNoodleLibNative.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TNoodleLibNative.xcframework; sourceTree = "<group>"; };
 		BDE37DAE5A40CE613D331B7D /* SessionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsListView.swift; sourceTree = "<group>"; };
 		BE8BC1D46194669BEB8737C1 /* Penalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penalty.swift; sourceTree = "<group>"; };
 		CA35E3B72314D43FB82AC4F2 /* Solve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solve.swift; sourceTree = "<group>"; };
 		D49FB4E9056AA337A1A85FC4 /* TimerArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerArea.swift; sourceTree = "<group>"; };
+		D83FBCAC9C0154CCB512212B /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		DEC31291E45F69870FDB00F1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E31F74CFCB36E93C21D71C35 /* racetimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "racetimer-Bridging-Header.h"; sourceTree = "<group>"; };
 		E45E3089B6C2D4F4A6661BC2 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		EE0F3019DD46F74832A93100 /* .gitignore */ = {isa = PBXFileReference; path = .gitignore; sourceTree = "<group>"; };
 		F1DB6B35612641C1686B041B /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
-		F3C2180EB48D47748E3AB9AD /* racetimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = racetimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3C2180EB48D47748E3AB9AD /* racetimer.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = racetimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CB5D184EEED018D8CBE4528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E7EE0C9766E4670EF4CBDA /* SVGView in Frameworks */,
+				59586AD380E109F13F73C0BB /* TNoodleLibNative.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		1D505FEF07BD7C748B24603C /* StateMachines */ = {
@@ -107,6 +142,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5A080BACF81E04783FE9C706 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1F4E5C5E17AF212154BB0CB /* TNoodleLibNative.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		74ABB4C4CE985B9FB3A6E271 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +178,7 @@
 				8E1E027B7C760D6D299AF042 /* Utils */,
 				B02C13CC9EAC41FC9BE7479C /* ViewModels */,
 				407EAE4E10CA9FE24C44860B /* Views */,
+				5A080BACF81E04783FE9C706 /* Frameworks */,
 				559EE30F9DE711329AAE94D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,8 +209,8 @@
 		C02EE36DD1177FC1A01C3C17 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				68C780D078FC9D2E0E6249A4 /* Localizable.strings */,
 				4779337ABA3551A418859873 /* LocalizedString.swift */,
+				68C780D078FC9D2E0E6249A4 /* Localizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -182,7 +226,19 @@
 		F8CD7ED2B7E7E94FA412D010 /* racetimer */ = {
 			isa = PBXGroup;
 			children = (
+				EE0F3019DD46F74832A93100 /* .gitignore */,
 				7D1A8AE41037AE0DF3E7B79B /* Assets.xcassets */,
+				76A397E62FC68F06E74A46EE /* LICENSE */,
+				D83FBCAC9C0154CCB512212B /* logo.jpg */,
+				E31F74CFCB36E93C21D71C35 /* racetimer-Bridging-Header.h */,
+				EEC8E61FA010AA9649A61C09 /* App */,
+				C02EE36DD1177FC1A01C3C17 /* Localization */,
+				ACA7E96E500735C1CF9FB5BD /* Models */,
+				74ABB4C4CE985B9FB3A6E271 /* Services */,
+				1D505FEF07BD7C748B24603C /* StateMachines */,
+				8E1E027B7C760D6D299AF042 /* Utils */,
+				B02C13CC9EAC41FC9BE7479C /* ViewModels */,
+				407EAE4E10CA9FE24C44860B /* Views */,
 			);
 			name = racetimer;
 			path = .;
@@ -197,6 +253,8 @@
 			buildPhases = (
 				99F6BEDD809FA14A9BEC6A2E /* Sources */,
 				DE9DB61CBCC4279F28C47968 /* Resources */,
+				9CB5D184EEED018D8CBE4528 /* Frameworks */,
+				23DF1B8DB210C794A4B30792 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +262,7 @@
 			);
 			name = racetimer;
 			packageProductDependencies = (
+				E6CB93D986277F305807E96C /* SVGView */,
 			);
 			productName = racetimer;
 			productReference = F3C2180EB48D47748E3AB9AD /* racetimer.app */;
@@ -217,9 +276,13 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					C29E7E8CBD6A5BB0BBAD1657 = {
+						DevelopmentTeam = 4UXF524SDA;
+					};
+				};
 			};
 			buildConfigurationList = 04BD18AF65E0CC8E7D3E0094 /* Build configuration list for PBXProject "racetimer" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -233,6 +296,11 @@
 			);
 			mainGroup = 8EBE1632457A45C95FE45DFF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A106BD682E6E135290A70FC3 /* XCRemoteSwiftPackageReference "SVGView" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 559EE30F9DE711329AAE94D6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -248,6 +316,7 @@
 			files = (
 				928AAE7906C80F8DD3EDABCA /* Assets.xcassets in Resources */,
 				651331678D1F6891291BEBA7 /* Localizable.strings in Resources */,
+				C74A5AB7AB09F152BEC81FBB /* logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,21 +381,27 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4UXF524SDA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = racetimer;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_FILE = TNoodleLibNative.xcframework/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RaceTimer;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.racetimer.racetimer;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.racetimer.ios;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "racetimer-Bridging-Header.h";
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -395,21 +470,27 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4UXF524SDA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = racetimer;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_FILE = TNoodleLibNative.xcframework/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RaceTimer;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.racetimer.racetimer;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.racetimer.ios;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "racetimer-Bridging-Header.h";
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -500,6 +581,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A106BD682E6E135290A70FC3 /* XCRemoteSwiftPackageReference "SVGView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/SVGView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E6CB93D986277F305807E96C /* SVGView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A106BD682E6E135290A70FC3 /* XCRemoteSwiftPackageReference "SVGView" */;
+			productName = SVGView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 35E4127B243F9FE31F1A6796 /* Project object */;
 }
